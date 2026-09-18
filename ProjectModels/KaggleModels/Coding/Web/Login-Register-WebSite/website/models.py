@@ -1,0 +1,18 @@
+from flask_wtf import FlaskForm
+from wtforms import FileField, SubmitField
+from wtforms.validators import InputRequired
+
+from . import db
+from flask_login import UserMixin
+
+
+class UploadFileForm(FlaskForm):
+    file = FileField("File", validators=[InputRequired()])
+    submit = SubmitField("Upload File")
+
+
+class User(db.Model, UserMixin):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(150), unique=True)
+    password = db.Column(db.String(150))
+    first_name = db.Column(db.String(150))

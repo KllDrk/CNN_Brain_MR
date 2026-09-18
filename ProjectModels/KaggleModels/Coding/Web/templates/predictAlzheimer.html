@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.thymeleaf.org
+http://www.thymeleaf.org ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,ininal-scale=1.0">
+    <title>predictTumor</title>
+    <style>
+
+	body{
+		margin:0;
+		padding:0;
+		background:rgb(177, 252, 252);
+	}
+
+	.singup-form{
+		height:100%;
+		width:98%;
+		padding:1%;
+		text-align:center;
+		background: rgb(123, 232, 240);
+	}
+
+	.singup-form1{
+		height:100%;
+		width:202%;
+		padding:1%;
+		margin-top:1%;
+		text-align:center;
+		background: rgb(123, 232, 240);
+	}
+
+	.singup-form h1{
+		color: rgb(0,0,0);
+		margin-top:10px;
+		font-family:"Times New Roman";
+	}
+
+	.radio{
+	margin:0 0px;
+	}
+
+	.singup-form input{
+		display: block;
+		width:100%;
+		padding:0 16px;
+		height: 44px;
+		text-align:center;
+		box-sizing:border-box;
+		border:none;
+	}
+
+	.txt{
+		background:rgb(255, 255, 255);
+	}
+
+	.singup-btn{
+		margin-top:60px;
+		margin-bottom:20px;
+		background:blueviolent;
+		color:rgb(48, 140, 216);
+		border-radius:100px;
+		font-size:30px;
+		font-family:"Times New Roman";
+		cursor:pointer;
+		transition:0.8s;
+		display:block;
+	}
+
+	.singup-btn1{
+		width:100%;
+		margin-top:60px;
+		background:blueviolent;
+		margin-bottom:20px;
+		color:rgb(48, 140, 216);
+		border-radius:100px;
+		font-size:30px;
+		font-family:"Times New Roman";
+		cursor:pointer;
+		transition:0.8s;
+		display:block;
+	}
+
+	.singup-btn:hover{
+		transform: scale(0.96);
+		background:rgb(0, 64, 128);
+		color:aliceblue;
+	}
+
+	.singup-btn1:hover{
+		transform: scale(0.96);
+		background:rgb(0, 64, 128);
+		color:aliceblue;
+	}
+
+	.singup-form a{
+		text-decoration:none;
+		color:rgb(0, 64, 128);
+		padding:10px;
+		transition:0.8s;
+		display:block;
+	}
+
+	.singup-btn a:hover{
+		color:aquamarine;
+	}
+
+	.singup-btn1 a:hover{
+		color:aquamarine;
+	}
+
+	.labelClass{
+		text-align:left;
+	}
+
+	.gridForm{
+		display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:2%;
+	}
+
+	.grid6{
+		display:grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		gap:2px;
+	}
+
+	h1{
+		text-align: center;
+		font-family:"Times New Roman";
+		color : rgb(48, 140, 216);
+		font-size: 70px;
+	}
+
+	h2{
+		text-align: center;
+		font-family:"Times New Roman";
+		color : rgb(48, 140, 216);
+		font-size: 35px;
+	}
+
+
+
+    </style>
+</head>
+<body>
+<h1>Resim Sorgulama</h1>
+<form action="predictAlzheimer.html" th:action="@{/predictAlzheimer}" th:object="${kullanici}" method="post">
+    <div class="singup-form">
+        <h2>Yükleme Menüsü</h2>
+        <div class="grid6">
+            <br>
+            <input type="file" accept="image/png,image/jpg" th:field="*{TumorResim}" class="txt" required>
+            <br>
+        </div>
+        <form action="predictAlzheimer.html" th:action="@{/predictAlzheimer}">
+            <div class="grid6">
+                <br>
+                <input type="submit" value="Yükleme" class="singup-btn">
+                <br>
+            </div>
+        </form>
+    </div>
+
+</form>
+</body>
+</html>
